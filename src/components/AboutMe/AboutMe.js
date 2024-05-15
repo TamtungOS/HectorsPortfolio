@@ -7,6 +7,7 @@ import TwitterIcon from '@mui/icons-material/Twitter';
 import TwitchIcon from '../../assets/icons/twitch.png';
 import { keyframes } from '@mui/system';
 import { Link } from 'react-router-dom';
+import Hector from '../../assets/images/HectorSMojicaArevalo.jpeg'
 
 const spin = keyframes`
     from {
@@ -21,7 +22,7 @@ const AboutMe = () => {
         <Box sx={{ textAlign: 'center', p: 4, bgcolor: 'Background.paper', boxShadow: 3, borderRadius: 2}}>
             <Avatar
             alt='Hector S Mojica Arevalo'
-            src='https://cvws.icloud-content.com/B/AcqyvBq_sQjaTcfPTBt0Wp7jcO-AAVfpbVrN_n6V7CagToyoOw_o_Jnb/Hector+S+Mojica+Arevalo.jpeg?o=AmuCuQKq4Who-xqEdYM6ZinAtwzVkto3D3Bvusup7lVi&v=1&x=3&a=CAogs5MIp7D4H0t30kehAb2ig4-L942s6yZ80aESb_gEt1ESbxDGmsna9zEYxvek3PcxIgEAUgTjcO-AWgTo_JnbaifNPOjYbr4e0Uz6rRGgV42cFB4MdsZaEXLfgVwd4Gpo2Hu4lTqiMfxyJ4V9UyFT02kdFBLpJ2aOHo5uqJs0eNvgwS195MmDhHMJvImH-zj67w&e=1715764542&fl=&r=bebe4923-a8eb-4a13-8c0e-f61bce469a4c-1&k=5RT8QQooM_pnvgVJqMcz0Q&ckc=com.apple.clouddocs&ckz=com.apple.CloudDocs&p=137&s=xNWgNEI6yhEQ8cbUXakDVWs2G_A&cd=i'
+            src={Hector}
             sx={{ width: 120, height: 120, margin: 'auto', animation: `${spin} .75s linear`}}
             />
             <Typography variant='h4' component='h1' gutterBottom>
