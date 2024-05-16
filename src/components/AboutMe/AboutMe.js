@@ -32,7 +32,7 @@ const AboutMe = () => {
                 Howdy! I'm Hector Samuel Mojica Arevalo
             </Typography> 
             <Typography variant='subtitle1' gutterBottom> {/* typography styling with subtitle1 texts, gutterbottom for bottom margin */}
-                Undergraduate student as Cal State Fullerton pursuing a BS in Computer Science,<br/>with a passion and drive for creating stylistic and functional web applications.
+                Undergraduate student at Cal State Fullerton pursuing a BS in Computer Science,<br/>with a passion and drive for creating stylistic and functional web applications.
             </Typography>
             {/* Button that when clicked redirects to download resume hosted on iCloud, _blank to open new tab, noopener and noreferrer to hide source information */}
             <Button variant='contained' color='primary' href='https://www.icloud.com/iclouddrive/0c9D5plsfImxlTOIkcnA38OWQ#Hector_Samuel_Mojica_Arevalo_Resume' target='_blank' rel='noopner noreferrer'>
