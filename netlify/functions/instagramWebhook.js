@@ -1,4 +1,4 @@
-expoerts.handler = async (event) => {
+exports.handler = async (event) => {
     if (event.httpMethod === "GET") {
         // Webhook verification for Meta Dev Portal
         const params = new URLSearchParams(event.queryStringParameters);
