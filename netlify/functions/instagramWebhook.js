@@ -6,7 +6,7 @@ exports.handler = async (event) => {
         const token = params.get("hub.verify_token");
         const challenge = params.get("hub.challenge");
 
-        if (mode === "subscribe" && token === "verify_token") {
+        if (mode === "subscribe" && token === process.env.VERIFY_TOKEN) {
             return {
                 statusCode: 200,
                 body: challenge,
