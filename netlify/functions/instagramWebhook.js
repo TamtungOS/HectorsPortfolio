@@ -2,7 +2,7 @@ exports.handler = async (event) => {
     if (event.httpMethod === "GET") {
         // Webhook verification for Meta Dev Portal
         const params = new URLSearchParams(event.queryStringParameters);
-        const mod = params.get("hub.mode");
+        const mode = params.get("hub.mode");
         const token = params.get("hub.verify_token");
         const challenge = params.get("hub.challenge");
 
