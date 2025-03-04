@@ -1,13 +1,11 @@
 import React from "react"; // importing React
-import {Box, Typography, Button, Card, CardMedia, CardContent, CardActions, Stack} from '@mui/material'; // imports MUI components used
-import screenshot from '../../assets/images/quiz-screenshot.png'; // imports screenshot of my quiz project for the project card
+import {Box, Typography, Button, Card, CardContent, CardActions, Stack} from '@mui/material'; // imports MUI components used
 import Fade from '@mui/material/Fade'; // imports fade animation from MUI/Fade for animating the projects card
 import {useEffect, useState} from 'react';
 import './Home.css' // imports the css file for the Home component
 
 const Home = () => {
     const [githubData, setGithubData] = useState(null);
-    const [githubUser, setGithubUser] = useState("TamtungOS");
 
     const fetchGitHubData = async () => {
         return fetch('https://api.github.com/users/TamtungOS/repos')
