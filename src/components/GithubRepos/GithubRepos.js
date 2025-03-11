@@ -1,6 +1,6 @@
 import react from 'react';
 import { useEffect, useState } from 'react';
-import axios from 'axios';
+// import axios from 'axios';
 import { Card, CardContent, CardActions, Button, Typography } from '@mui/material';
 import Carousel from 'react-material-ui-carousel';
 
