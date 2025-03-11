@@ -1,5 +1,5 @@
 // import React, { useState } from 'react'; // imports react and usestate hook from react
-import { Box, Button, TextField, Typography, Slide } from '@mui/material'; // imports used elements from mui
+import { Box, Button, Typography } from '@mui/material'; // imports used elements from mui
 
 // defines contact arrow function
 const Contact = () => {

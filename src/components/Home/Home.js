@@ -1,5 +1,5 @@
 import React from "react"; // importing React
-import {Box, Typography, Button, Card, CardContent, CardActions, Stack} from '@mui/material'; // imports MUI components used
+import {Box, Typography} from '@mui/material'; // imports MUI components used
 // import InstagramPosts from '../InstagramPosts/InstagramPosts'; // imports the InstagramPosts component
 // import Twitch from '../Twitch/Twitch'; // imports the Twitch component
 import GithubRepos from '../GithubRepos/GithubRepos'; // imports the GithubRepos component
