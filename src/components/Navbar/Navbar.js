@@ -16,7 +16,7 @@ const Navbar = () => {
                     Contact
                 </Button>
                 <Button color='inherit' component={Link} to='/aboutme'> {/* Button that inherits color from parent and links button to aboutme component */}
-                    About Me
+                    Me
                 </Button>
             </Toolbar>
         </AppBar>
