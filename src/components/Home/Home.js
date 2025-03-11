@@ -1,10 +1,7 @@
 import React from "react"; // importing React
 import {Box, Typography, Button, Card, CardContent, CardActions, Stack} from '@mui/material'; // imports MUI components used
-import Fade from '@mui/material/Fade'; // imports fade animation from MUI/Fade for animating the projects card
-import {useEffect, useState} from 'react';
-import InstagramPosts from '../InstagramPosts/InstagramPosts'; // imports the InstagramPosts component
-import Carousel from 'react-material-ui-carousel';
-import Twitch from '../Twitch/Twitch'; // imports the Twitch component
+// import InstagramPosts from '../InstagramPosts/InstagramPosts'; // imports the InstagramPosts component
+// import Twitch from '../Twitch/Twitch'; // imports the Twitch component
 import GithubRepos from '../GithubRepos/GithubRepos'; // imports the GithubRepos component
 const Home = () => {
 
