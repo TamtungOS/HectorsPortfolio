@@ -1,50 +1,111 @@
-import react from 'react';
-import { useEffect, useState } from 'react';
-// import axios from 'axios';
-import { Card, CardContent, CardActions, Button, Typography } from '@mui/material';
-import Carousel from 'react-material-ui-carousel';
+import React, { useEffect, useState } from 'react';
+import Slider from 'react-slick';
+import { Box, Card, CardContent, Typography, IconButton } from '@mui/material';
+import ArrowBackIosNewIcon from '@mui/icons-material/ArrowBackIosNew';
+import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
+import "slick-carousel/slick/slick.css"; 
+import "slick-carousel/slick/slick-theme.css";
+
+function PrevArrow(props) {
+  const { onClick } = props;
+  return (
+    <IconButton
+      onClick={onClick}
+      sx={{
+        position: 'absolute',
+        left: -25,
+        top: '50%',
+        transform: 'translateY(-50%)',
+        zIndex: 1,
+        color: 'primary.main'
+      }}
+      aria-label="previous slide"
+    >
+      <ArrowBackIosNewIcon />
+    </IconButton>
+  );
+}
+
+function NextArrow(props) {
+  const { onClick } = props;
+  return (
+    <IconButton
+      onClick={onClick}
+      sx={{
+        position: 'absolute',
+        right: -25,
+        top: '50%',
+        transform: 'translateY(-50%)',
+        zIndex: 1,
+        color: 'primary.main'
+      }}
+      aria-label="next slide"
+    >
+      <ArrowForwardIosIcon />
+    </IconButton>
+  );
+}
 
 const GithubRepos = () => {
-    const [githubData, setGithubData] = useState(null);
+  const [githubData, setGithubData] = useState([]);
 
-    const fetchGitHubData = async () => {
-        return fetch('https://api.github.com/users/TamtungOS/repos')
-        .then((response) => response.json())
-        .then((data) => (
-            setGithubData(data)
-            )
-        );
+  const fetchGitHubData = async () => {
+    try {
+      const response = await fetch('https://api.github.com/users/TamtungOS/repos');
+      const data = await response.json();
+      setGithubData(data);
+    } catch (error) {
+      console.error('Error fetching GitHub data:', error);
     }
+  };
 
-    useEffect(() => {
-        fetchGitHubData();
-    }
-    , []);
+  useEffect(() => {
+    fetchGitHubData();
+  }, []);
 
-    return (
-        <Carousel
-            navButtonsAlwaysVisible
-            autoPlay={false}
-            indicators={true}
-            animation="slide"
-        >
-            {githubData && githubData.map((repo, index) => (
-                <Card key={index} sx={{ marginBottom: '1rem', marginLeft: "auto", marginRight: "auto", width: '300px', display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
-                    <CardContent>
-                        <Typography variant="h6" sx={{ overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>
-                            {repo.name}
-                        </Typography>
-                        <Typography variant="body2" color="textSecondary" sx={{ mt: 2, overflow: 'hidden', textOverflow: 'ellipsis', display: '-webkit-box', WebkitBoxOrient: 'vertical', WebkitLineClamp: 2 }}>
-                            {repo.description}
-                        </Typography>
-                    </CardContent>
-                    <CardActions sx={{ justifyContent: 'center' }}>
-                        <Button size="small" color="primary" href={repo.html_url} target="_blank">View repository</Button>
-                    </CardActions>
-                </Card>
-            ))}
-        </Carousel>
-    );
-}
+  const settings = {
+    dots: true,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 3,
+    slidesToScroll: 1,
+    nextArrow: <NextArrow />,
+    prevArrow: <PrevArrow />,
+    responsive: [
+      {
+        breakpoint: 1024,
+        settings: { slidesToShow: 2 }
+      },
+      {
+        breakpoint: 600,
+        settings: { slidesToShow: 1 }
+      }
+    ]
+  };
+
+  return (
+    <Box sx={{ maxWidth: '1200px', mx: 'auto', my: 4, position: 'relative', px: 2 }}>
+      <Typography variant="h4" align="center" gutterBottom>
+        GitHub Repositories
+      </Typography>
+      <Slider {...settings}>
+        {githubData.map((repo) => (
+          <Box key={repo.id} sx={{ p: 1 }}>
+            <Card sx={{ mx: 'auto', maxWidth: 350, minHeight: 150 }}>
+              <CardContent>
+                <Typography variant="h6" noWrap>
+                  {repo.name}
+                </Typography>
+                <Typography variant="body2" color="textSecondary">
+                  {repo.description || "No description available."}
+                </Typography>
+              </CardContent>
+            </Card>
+          </Box>
+        ))}
+      </Slider>
+    </Box>
+  );
+};
 
 export default GithubRepos;
