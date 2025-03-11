@@ -1,0 +1,36 @@
+.arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    z-index: 2;
+}
+
+.arrow.prev {
+    left: 15px;
+}
+
+.arrow.next {
+    right: 15px;
+}
+
+.carousel .control-dots {
+    padding-top: 20px; /* Add padding between the card and the indicators */
+}
+
+.carousel .control-dots .dot {
+    background: gray;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    margin: 0 800px;
+    cursor: pointer;
+}
+
+.carousel .control-dots .dot.selected {
+    background: blue;
+}
