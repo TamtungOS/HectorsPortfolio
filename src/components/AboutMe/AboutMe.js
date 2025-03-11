@@ -5,18 +5,10 @@ import GitHubIcon from '@mui/icons-material/GitHub'; // github icon from mui ico
 import InstagramIcon from '@mui/icons-material/Instagram'; // instagram icon from mui icons
 import TwitterIcon from '@mui/icons-material/Twitter'; // twitter icon from mui icons
 import TwitchIcon from '../../assets/icons/twitch.png'; // linkedin icon from src/assets/icons folder
-import { keyframes } from '@mui/system'; // imports keyframes from mui/system for custom animation
 import { Link } from 'react-router-dom'; // imports Link from react router
 import Hector from '../../assets/images/HectorSMojicaArevalo.jpeg' // imports my picture from src/assets/images folder
 
 /* declares my custom spin animation for page load */
-const spin = keyframes` 
-    from {
-        transform: rotate(0deg);
-    }
-    to {
-        transform: rotate(360deg);
-    }`;
 
 const AboutMe = () => {
     return (
@@ -26,7 +18,7 @@ const AboutMe = () => {
             <Avatar
             alt='Hector S Mojica Arevalo'
             src={Hector}
-            sx={{ width: 120, height: 120, margin: 'auto', animation: `${spin} .75s linear`}}
+            sx={{ width: 120, height: 120, margin: 'auto'}}
             />
             <Typography variant='h4' component='h1' gutterBottom> {/* typography styling with h4 and h1 texts, gutterbottom for bottom margin */}
                 Howdy! I'm Hector Samuel Mojica Arevalo
@@ -35,8 +27,8 @@ const AboutMe = () => {
                 Undergraduate student at Cal State Fullerton pursuing a BS in Computer Science,<br/>with a passion and drive for creating stylistic and functional web applications.
             </Typography>
             {/* Button that when clicked redirects to download resume hosted on iCloud, _blank to open new tab, noopener and noreferrer to hide source information */}
-            <Button variant='contained' color='primary' href='https://www.icloud.com/iclouddrive/0c9D5plsfImxlTOIkcnA38OWQ#Hector_Samuel_Mojica_Arevalo_Resume' target='_blank' rel='noopner noreferrer'>
-                Download Resume
+            <Button variant='contained' color='primary' href='https://www.icloud.com/pages/01f2gui3bRqYwjI_eLEZU7BOA#HectorSMojicaArevalo%5FResume' target='_blank' rel='noopner noreferrer'>
+                View Resume
                 </Button>
                 {/* Stack component with row direction and .1 spacing for my social media links. contents justified center and sx styling with mt margin top 2units */}
                 <Stack direction='row' spacing={.1} justifyContent='center' sx={{ mt: 2}}>
@@ -45,11 +37,11 @@ const AboutMe = () => {
                         <LinkedInIcon/>
                     </IconButton>
                     {/* iconbutton that links to my github profile, _blank to open new tab, noopener and noreferrer to hide source information */}
-                    <IconButton aria-label='GitHub profile' component={MuiLink} href='https://github.com/Tamtung301/' target='_blank' rel='noopener noreferrer'>
+                    <IconButton aria-label='GitHub profile' component={MuiLink} href='https://github.com/TamtungOS/' target='_blank' rel='noopener noreferrer'>
                         <GitHubIcon/>
                     </IconButton>
                     {/* iconbutton that links to my instagram profile, _blank to open new tab, noopener and noreferrer to hide source information */}
-                    <IconButton aria-label='Instagram profile' component={MuiLink} href='https://www.instagram.com/_tamtung_/' target='_blank' rel='noopener noreferrer'>
+                    <IconButton aria-label='Instagram profile' component={MuiLink} href='https://www.instagram.com/tamtungos/' target='_blank' rel='noopener noreferrer'>
                         <InstagramIcon/>
                     </IconButton>
                     {/* iconbutton that links to my twitter profile, _blank to open new tab, noopener and noreferrer to hide source information */}
